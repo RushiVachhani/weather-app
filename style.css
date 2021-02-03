@@ -1,3 +1,4 @@
+/*
 * {
     padding: 0;
     margin: 0;
@@ -56,4 +57,91 @@ body {
 .degree-section h2 {
     margin: 10px;
     font-size: 40px;
+}
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    /*background-color: darkslateblue;*/
+    background-image: url(./assets/pexels-photo-1114244.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.current-position {
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: linear-gradient(99.44deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2));
+    opacity: 0.75;
+    box-shadow: 0px 1px 24px -1px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(80px);
+    top: 30px;
+    left: 30px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+}
+
+#position-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#position-image img {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.position-coordinates {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    align-items: left;
+    justify-content: space-between;
+    color: white;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.temperature-main {
+    border: 1px solid red;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 25%;
+    color: white;
+}
+
+.temperature {
+    border: 1px solid red;
+    font-size: 72px;
+    margin: 5px;
+}
+.temperature sup {
+    border: 1px solid red;
+    font-size: 28px;
+}
+
+.temperature-description {
+    border: 1px solid red;
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
 }
