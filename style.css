@@ -60,7 +60,7 @@ body {
 }
 */
 
-.current-position, .position-image, .position-coordinates {
+/* .current-position, .position-image, .position-coordinates {
     border: 1px solid red;
 }
 
@@ -86,7 +86,7 @@ body {
 
 .weather-icon {
     border: 1px solid red;
-}
+} */
 
 * {
     padding: 0;
@@ -118,7 +118,6 @@ body,html {
     width: 250px;
     height: 100px;
     position: absolute;
-    /* display: none; */
 }
 
 #position-image {
@@ -158,7 +157,6 @@ body,html {
     right: 30px;
     top: 30px;
     position: absolute;
-    /*display: none;*/
 }
 
 .location .city, .location .country {
