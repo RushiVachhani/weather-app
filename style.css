@@ -92,14 +92,18 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 body,html {
     height: 100%;
     width: 100%;
-    background-image: url(./assets/pexels-photo-1114244.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+
+.background-img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
     overflow: hidden;
 }
 
