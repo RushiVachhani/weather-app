@@ -217,7 +217,15 @@ body,html {
     top: 50%;
     left: 30px;
     position: absolute;
-    color: white;
+    /* color: white; */
+}
+
+.temperature-info div {
+    margin: 5px;
+}
+
+.temperature-info > div span {
+    margin: 0px 10px 0px 10px;
 }
 
 .weather-icon {
