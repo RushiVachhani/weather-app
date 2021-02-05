@@ -147,6 +147,10 @@ body,html {
     line-height: 21px;
 }
 
+.position-coordinates > h2 > span {
+    margin-left: 12px;
+}
+
 .location {
     border-radius: 10px;
     display: flex;
