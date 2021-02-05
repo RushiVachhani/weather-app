@@ -163,6 +163,10 @@ body,html {
     position: absolute;
 }
 
+.location div {
+    margin : 0px 10px;
+}
+
 .location .city, .location .country {
     font-size: 18px;
     margin: 5px;
@@ -183,23 +187,25 @@ body,html {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 150px;
+    width: 175px;
     top: 30px;
-    left: 45%;
+    left: 42%;
     padding: 10px;
     text-align: center;
     position: absolute;
 }
 
 .temperature {
-    font-size: 36px;
+    font-size: 72px;
 }
 
 .temperature > sup {
-    font-size: 18px;
+    font-size: 36px;
 }
 
 .temperature-description {
+    margin-top: 10px;
+    font-size: 36px;
     font-style: italic;
 }
 
