@@ -1,17 +1,20 @@
 //extracting the elements from html
 
 const background_img = document.querySelector('.background-image');
-const { latitude, longitude } = document.querySelectorAll('.coordinate-value');
+const latitude = document.querySelectorAll('.coordinate-value')[0];
+const longitude = document.querySelectorAll('.coordinate-value')[1];
 const city = document.querySelector('.city > h2');
 const country = document.querySelector('.country > h2');
 const countryFlag = document.querySelector('.country-flag > img');
-const tempvalue = document.querySelector('.temperature');
+const tempvalue = document.querySelector('.temperature').childNodes[0];
 const tempDescription = document.querySelector('.temperature-description');
-const { feelsLike, minTemp, maxTemp} = document.querySelectorAll('.temp-info');
+const feelsLike = document.querySelectorAll('.temp-info').item(0);
+const minTemp = document.querySelectorAll('.temp-info').item(1);
+const maxTemp = document.querySelectorAll('.temp-info').item(2);
 const weatherIcon = document.querySelector('.weather-icon > img');
 const sunriseTime = document.querySelector('.sunrise-time');
 const sunsetTime = document.querySelector('.sunset-time');
-const { pressure, humidity, visibility, wind } = document.querySelectorAll('.extra-info');
+const [ pressure, humidity, visibility, wind ] = [...Array.from(document.querySelectorAll('.extra-info h3'))];
 
 //functions
 
@@ -44,7 +47,20 @@ async function getWeatherData(lat, long) {
     const weatherData = await fetch(api);
     const weatherDataJson = await weatherData.json();
     console.log(weatherDataJson);
+    updateHtml(weatherDataJson);
 }
 
-//checking for navigator permission
+//function for updating the html based on data received
+function updateHtml(data) {
+    latitude.textContent = parseFloat(data.coord.lat).toFixed(2);
+    longitude.textContent = parseFloat(data.coord.lon).toFixed(2);
+    tempvalue.textContent = data.main.temp;
+    minTemp.textContent = data.main.temp_min;
+    maxTemp.textContent = data.main.temp_max;
+    feelsLike.textContent = data.main.feels_like;
+    
+}
+
+//console.log(pressure.textContent.split(" ")[2].split("hPa")[0])
+//call navigator on window load
 window.addEventListener('load', checkNavigator);
