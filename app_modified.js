@@ -53,6 +53,7 @@ async function getWeatherData(lat, long) {
 //function for updating the html based on data received
 function updateHtml(data) {
     background_img.setAttribute('src', getBackgroundImgUrl());
+    determineFontColor();
     latitude.textContent = parseFloat(data.coord.lat).toFixed(2);
     longitude.textContent = parseFloat(data.coord.lon).toFixed(2);
     tempvalue.textContent = data.main.temp;
@@ -96,15 +97,34 @@ function getCountryFlagIconUrl(countryCode) {
     return `https://www.countryflags.io/${countryCode}/${flagStyle}/${flagSize}.png`;
 }
 
+//function to determine the time of day
+function getTimeOfDay() {
+    let date = new Date();
+    let timeOfDay = ''
+    //date.toTimeString();
+    if(date.getHours()>= 06 && date.getHours()<= 17) timeOfDay = "morning";
+    else if(date.getHours()>= 17 && date.getHours()<= 20) timeOfDay = "evening";
+    else timeOfDay = "night";
+    return timeOfDay;
+}
+
 //function to determine the background image
 function getBackgroundImgUrl() {
-    let date = new Date();
-    let imgUrl = ''
-    //date.toTimeString();
-    if(date.getHours()>= 06 && date.getHours()<= 17) imgUrl = "./assets/morning.jpg";
-    else if(date.getHours()>= 17 && date.getHours()<= 20) imgUrl = "./assets/evening.jpg";
+    let dayTime = getTimeOfDay();
+    let imgUrl = '';
+    if(dayTime === "morning") imgUrl = "./assets/morning.jpg";
+    else if(dayTime === "evening") imgUrl = "./assets/evening.jpg";
     else imgUrl = "./assets/night.png";
     return imgUrl;
+}
+
+//function to determine font color
+function determineFontColor() {
+    let dayTime = getTimeOfDay();
+    if(dayTime === "morning") document.body.style.color = "black";
+    else if(dayTime === "evening") document.body.style.color = "black";
+    else document.body.style.color = "white";
+    return null;
 }
 
 //console.log(pressure.textContent.split(" ")[2].split("hPa")[0])
