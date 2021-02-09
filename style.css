@@ -196,14 +196,21 @@ body,html {
     padding: 10px;
     text-align: center;
     position: absolute;
+    cursor: pointer;
 }
 
 .temperature {
     font-size: 72px;
 }
 
-.temperature > sup {
+.temperature > sup.metric-active {
     font-size: 36px;
+}
+
+.temperature > sup.metric-inactive {
+    font-size: 24px;
+    margin-left: 5px;
+    color: rgba(50, 50, 50, 0.5);
 }
 
 .temperature-description {

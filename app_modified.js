@@ -7,6 +7,8 @@ const city = document.querySelector('.city > h2');
 const country = document.querySelector('.country > h2');
 const countryFlag = document.querySelector('.country-flag > img');
 const tempvalue = document.querySelector('.temperature').childNodes[0];
+const tempMetricActive = document.querySelector('.temperature > sup.metric-active');
+const tempMetricInactive = document.querySelector('.temperature > sup.metric-inactive');
 const tempDescription = document.querySelector('.temperature-description');
 const feelsLike = document.querySelectorAll('.temp-info').item(0);
 const minTemp = document.querySelectorAll('.temp-info').item(1);
@@ -127,6 +129,31 @@ function determineFontColor() {
     return null;
 }
 
+function toFahrenheight() {
+    tempvalue.textContent = ((9/5)*parseFloat(tempvalue.textContent) + 32).toFixed(1);
+    feelsLike.textContent = ((9/5)*parseFloat(feelsLike.textContent) + 32).toFixed(1);
+    maxTemp.textContent = ((9/5)*parseFloat(maxTemp.textContent) + 32).toFixed(1);
+    minTemp.textContent = ((9/5)*parseFloat(minTemp.textContent) + 32).toFixed(1);
+    tempMetricActive.textContent = "F";
+    tempMetricInactive.textContent = "C";
+    return null;
+}
+
+function toCelcius() {
+    tempvalue.textContent = ((5/9)*(parseFloat(tempvalue.textContent)-32)).toFixed(1);
+    feelsLike.textContent = ((5/9)*(parseFloat(feelsLike.textContent)-32)).toFixed(1);
+    maxTemp.textContent = ((5/9)*(parseFloat(maxTemp.textContent)-32)).toFixed(1);
+    minTemp.textContent = ((5/9)*(parseFloat(minTemp.textContent)-32)).toFixed(1);
+    tempMetricActive.textContent = "C";
+    tempMetricInactive.textContent = "F";
+    return null;
+}
+
+function changeTemperatureMetric() {
+    tempMetricActive.textContent==='C' ? toFahrenheight() : toCelcius();
+}
+
 //console.log(pressure.textContent.split(" ")[2].split("hPa")[0])
 //call navigator on window load
 window.addEventListener('load', checkNavigator);
+document.querySelector('.temperature-main').addEventListener('click', changeTemperatureMetric);
