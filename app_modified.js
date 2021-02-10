@@ -77,8 +77,8 @@ function updateHtml(data) {
 
 //function to determine wind direction from degree
 function getWindDirection(deg) {
-    let direction = ['N', 'NW', 'W', 'SW', 'S', 'SE', 'E', 'NE'];
-    return direction[(Math.round((deg/45)%8))];
+    let direction = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+    return direction[(Math.floor((deg/22.5)+0.5)%16)]; 
 }
 
 //function to convert Unix timestamp to local time string
