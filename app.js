@@ -17,7 +17,8 @@ const weatherIcon = document.querySelector('.weather-icon > img');
 const sunriseTime = document.querySelector('.sunrise-time');
 const sunsetTime = document.querySelector('.sunset-time');
 const [ pressure, humidity, visibility, wind ] = [...Array.from(document.querySelectorAll('.extra-info h3'))];
-
+const loadingAnimation = document.querySelector('.loading-animation');
+const bodyWraper = document.querySelector('.body-wraper');
 //functions
 
 //function to check navigator
@@ -73,12 +74,13 @@ function updateHtml(data) {
     sunsetTime.textContent = convertUnixTime(data.sys.sunset);
     weatherIcon.setAttribute('src', getWeatherIconUrl(data.weather[0].icon));
     countryFlag.setAttribute('src', getCountryFlagIconUrl(data.sys.country));
+    displayContent();
 }
 
 //function to determine wind direction from degree
 function getWindDirection(deg) {
-    let direction = ['N', 'NW', 'W', 'SW', 'S', 'SE', 'E', 'NE'];
-    return direction[(Math.round((deg/45)%8))];
+    let direction = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+    return direction[(Math.floor((deg/22.5)+0.5)%16)]; 
 }
 
 //function to convert Unix timestamp to local time string
@@ -129,7 +131,8 @@ function determineFontColor() {
     return null;
 }
 
-function toFahrenheight() {
+//function to convert celcius to fahrenheit
+function toFahrenheit() {
     tempvalue.textContent = ((9/5)*parseFloat(tempvalue.textContent) + 32).toFixed(1);
     feelsLike.textContent = ((9/5)*parseFloat(feelsLike.textContent) + 32).toFixed(1);
     maxTemp.textContent = ((9/5)*parseFloat(maxTemp.textContent) + 32).toFixed(1);
@@ -139,6 +142,7 @@ function toFahrenheight() {
     return null;
 }
 
+//function to convert fhrenheit to celcius
 function toCelcius() {
     tempvalue.textContent = ((5/9)*(parseFloat(tempvalue.textContent)-32)).toFixed(1);
     feelsLike.textContent = ((5/9)*(parseFloat(feelsLike.textContent)-32)).toFixed(1);
@@ -149,8 +153,15 @@ function toCelcius() {
     return null;
 }
 
+// function to toggle temperature metric
 function changeTemperatureMetric() {
-    tempMetricActive.textContent==='C' ? toFahrenheight() : toCelcius();
+    tempMetricActive.textContent==='C' ? toFahrenheit() : toCelcius();
+}
+
+//function to display the contents and hide the loading animation
+function displayContent() {
+    loadingAnimation.style.visibility = "hidden";
+    bodyWraper.style.visibility = "visible";
 }
 
 //console.log(pressure.textContent.split(" ")[2].split("hPa")[0])
