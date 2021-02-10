@@ -98,6 +98,20 @@ body {
 body,html {
     height: 100%;
     width: 100%;
+    overflow: hidden;
+}
+
+.loading-animation {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    visibility: visible;
+}
+
+.body-wraper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 .background-img {
