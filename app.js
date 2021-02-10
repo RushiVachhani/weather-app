@@ -164,7 +164,6 @@ function displayContent() {
     bodyWraper.style.visibility = "visible";
 }
 
-//console.log(pressure.textContent.split(" ")[2].split("hPa")[0])
 //call navigator on window load
 window.addEventListener('load', checkNavigator);
 document.querySelector('.temperature-main').addEventListener('click', changeTemperatureMetric);
