@@ -7,74 +7,99 @@
     <title>Weather App</title>
 </head>
 <body>
-    
-    <img src="" alt="" class="background-img">
-
-    <section class="current-position">
-        <div id="position-image">
-            <img src="./assets/location10-512.png" alt="">
+    <!--commented
+    <div class="location">
+        <div class="timezone-section">
+            <h1 class="timezone-timezone">Timezone</h1>
+            <h1 class="seperator">|</h1>
+            <h4 class="timezone-country">Country</h4>
+            <img src="" alt="country flag" id="country_flag">
         </div>
-        <div class="position-coordinates">
-            <h2 id="latitude">Latitude <span class="seperator">:</span><span class="coordinate-value">--</span></h2>
-            <h2 id="longitude">Longitude :<span class="coordinate-value">--</span></h2>
-        </div>
-    </section>
-
-    <section class="location">
-        <div class="city">
-            <h2>--</h2>
-        </div>
-        <div class="country">
-            <h2>--</h2>
-        </div>
-        <div class="country-flag">
-            <img src="" alt="country-flag">
-        </div>
-    </section>
-
-    <section class="temperature-main">
-        <h1 class="temperature">--<sup class="metric-active">C</sup><sup class="metric-inactive">F</sup></h1>
-        <h2 class="temperature-description">-</h2>
-    </section>
-
-    <section class="temperature-info">
-        <div class="feelslike">
-            <h3>Feels like &nbsp;<span>:</span><span class="temp-info">--</span></h3>
-        </div>
-        <div class="temp-min">
-            <h3>Minimum <span>:</span><span class="temp-info">--</span></h3>
-        </div>
-        <div class="temp-max">
-            <h3>Maximum<span>:</span><span class="temp-info">--</span></h3>
-        </div>
-    </section>
-
-    <div class="weather-icon">
-        <img src="" alt="weather-icon">
+        <img src="" alt="icon" id="weather_icon">
     </div>
 
-    <section class="sun-info">
-        <div class="sunrise">
-            <div class="sunrise-img">
-                <img src="./assets/sunrise.png" alt="sunrise-img">
-            </div>
-            <h3 class="sunrise-time">--:--:--</h3>
+    <div class="temperature">
+        <div class="degree-section">
+            <h2 class="temperature-degree">--</h2>
+            <span>C</span>
         </div>
-        <div class="sunset">
-            <div class="sunset-img">
-                <img src="./assets/sunset--v1.png" alt="sunset-img">
-            </div>
-            <h3 class="sunset-time">--:--:--</h3>
+        <div class="temperature-description">
+            ---
         </div>
-    </section>
+    </div>
+-->
+    <div class="loading-animation" style="visibility: visible;">
+        <img src="./assets/loading.gif" alt="loading-animation">
+    </div>
+    
+    <div class="body-wraper" style="visibility: hidden;">
+        <img src="" alt="" class="background-img">
 
-    <section class="extra-info">
-        <h3 class="pressure">Pressure : -- hPa</h3>
-        <h3 class="humidity">Humidity : -- %</h3>
-        <h3 class="visibility">Visibility : -- km</h3>
-        <h3 class="wind">Wind : -- m/s --</h3>
-    </section>
+        <section class="current-position">
+            <div id="position-image">
+                <img src="./assets/location10-512.png" alt="">
+            </div>
+            <div class="position-coordinates">
+                <h2 id="latitude">Latitude <span class="seperator">:</span><span class="coordinate-value">--</span></h2>
+                <h2 id="longitude">Longitude :<span class="coordinate-value">--</span></h2>
+            </div>
+        </section>
 
+        <div class="location">
+            <div class="city">
+                <h2>--</h2>
+            </div>
+            <div class="country">
+                <h2>--</h2>
+            </div>
+            <div class="country-flag">
+                <img src="" alt="country-flag">
+            </div>
+        </div>
+
+        <section class="temperature-main">
+            <h1 class="temperature">--<sup class="metric-active">C</sup><sup class="metric-inactive">F</sup></h1>
+            <h2 class="temperature-description">-</h2>
+        </section>
+
+        <section class="temperature-info">
+            <div class="feelslike">
+                <h3>Feels like &nbsp;<span>:</span><span class="temp-info">--</span></h3>
+            </div>
+            <div class="temp-min">
+                <h3>Minimum <span>:</span><span class="temp-info">--</span></h3>
+            </div>
+            <div class="temp-max">
+                <h3>Maximum<span>:</span><span class="temp-info">--</span></h3>
+            </div>
+        </section>
+
+        <div class="weather-icon">
+            <img src="" alt="weather-icon">
+        </div>
+
+        <section class="sun-info">
+            <div class="sunrise">
+                <div class="sunrise-img">
+                    <img src="./assets/sunrise.png" alt="sunrise-img">
+                </div>
+                <h3 class="sunrise-time">--:--:--</h3>
+            </div>
+            <div class="sunset">
+                <div class="sunset-img">
+                    <img src="./assets/sunset--v1.png" alt="sunset-img">
+                </div>
+                <h3 class="sunset-time">--:--:--</h3>
+            </div>
+        </section>
+
+        <section class="extra-info">
+            <h3 class="pressure">Pressure : -- hPa</h3>
+            <h3 class="humidity">Humidity : -- %</h3>
+            <h3 class="visibility">Visibility : -- km</h3>
+            <h3 class="wind">Wind : -- m/s --</h3>
+        </section>
+    </div>
     
     <script src="./config.js"></script>
     <script src="./app.js"></script>

@@ -7,6 +7,20 @@
 body,html {
     height: 100%;
     width: 100%;
+    overflow: hidden;
+}
+
+.loading-animation {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    visibility: visible;
+}
+
+.body-wraper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 .background-img {
@@ -69,7 +83,7 @@ body,html {
     box-shadow: 0px 1px 24px -1px rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(80px);
     padding: 10px 30px;
-    width: 275px;
+    /* width: 275px; */
     right: 30px;
     top: 30px;
     position: absolute;
